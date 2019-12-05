@@ -27,10 +27,26 @@ def index():
     if request.method == 'POST':
         title = request.form.get('title')
         nota = request.form.get('nota')
-        collection.delete_many({})
+        # collection.delete_many({})
         collection.insert_one({'title': title, 'nota': nota, 'date': d})
         return render_template('index.html')
     return render_template('index.html',)
+
+@app.route('/verNotas', methods=['GET', 'POST'])
+def ver():
+    datos = collection.find({},{'_id': 0})
+    lista = list(datos)
+    leng = len(lista)
+    nota = list()
+    title = list()
+    date = list()
+    for i in range(0, leng):
+        nota.append(lista[i]['nota'])
+        title.append(lista[i]['title'])
+        date.append(lista[i]['date'])
+    return render_template('verNotas.html', nota=nota, title=title, date=date, list=list, leng=leng)
+
+    return render_template('verNotas.html')
 
 if __name__ == "__main__":
     app.run('127.0.0.1', 5000, debug=True)

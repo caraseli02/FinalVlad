@@ -31,3 +31,32 @@
         }
     }
 }
+
+.notas{
+    display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "date title" "text text";
+
+    .notas__date{
+        grid-area: date;
+        font-size: 52px;
+        letter-spacing: 0;
+        color: #FFFFFF;
+        opacity: 1;
+        grid-area: date;
+        text-align:center;
+    }
+
+    .notas__title{
+        @extend .notas__date ;
+        grid-area: title;
+    }
+
+    .notas__texto{
+        grid-area: text;
+        width: 80vw;
+        height: 200px;
+        background-color: #fff;
+    }
+}

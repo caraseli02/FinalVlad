@@ -114,19 +114,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/static/sass/layouts/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/static/sass/layouts/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/static/sass/layouts/_header.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -162,6 +149,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/static/sass/layouts/footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/static/sass/layouts/gridxflex.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/static/sass/layouts/gridxflex.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

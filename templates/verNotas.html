@@ -1,8 +1,24 @@
 {% extends 'layout.html' %}
 
 
+{% block header %}
+
+    <span class="header_crear">Ver</span>
+
+{% endblock %}
+
 <!-- MAIN BLOCK -->
 {% block main %}
+    <section class="ver">
+    {% for i in range(1, leng) %}
+        <div class="notas">
+            <span class="notas__date">{{ date[i] }}</span>
+            <span class="notas__title">{{ title[i] }}</span>
+            <p class="notas__texto">{{ nota[i] }}</p>
+        </div>
+    {% endfor %}
 
+{{ list }}
+    </section>
 
 {% endblock %}

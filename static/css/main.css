@@ -47,10 +47,29 @@ header {
       width: 400px;
       height: 150px; }
 
+.notas {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "date title" "text text"; }
+  .notas .notas__date, .notas .notas__title {
+    grid-area: date;
+    font-size: 52px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    grid-area: date;
+    text-align: center; }
+  .notas .notas__title {
+    grid-area: title; }
+  .notas .notas__texto {
+    grid-area: text;
+    width: 80vw;
+    height: 200px;
+    background-color: #fff; }
+
 body {
   background-color: #34558B;
-  width: 100vw;
-  height: 100vh; }
+  width: 100vw; }
   body main {
-    width: 100vw;
-    height: 55vh; }
+    width: 100vw; }
