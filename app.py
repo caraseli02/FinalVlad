@@ -8,7 +8,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 #Mongo URL Atlas
-MONGO_URL_ATLAS = 'mongodb+srv://admin:root@cluster0-ypkpe.azure.mongodb.net/test?retryWrites=true&w=majority'
+MONGO_URL_ATLAS = 'mongodb+srv://admin:root@cluster0-odxe4.mongodb.net/test?retryWrites=true&w=majority'
 
 client = MongoClient(MONGO_URL_ATLAS, ssl_cert_reqs=False)
 db = client['Inserted']
@@ -16,7 +16,10 @@ collection = db['Worlds']
 
 #rutas
 @app.route('/', methods=['GET', 'POST'])
-def inicio():
+def index():
+    if request.method == 'POST':
+        pass
+        # datos = request.form.get('insertedWorld')
     return render_template('index.html')
 
 if __name__ == "__main__":
