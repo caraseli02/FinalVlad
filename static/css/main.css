@@ -1,13 +1,56 @@
-.header__notas {
-  top: 0px;
-  left: 465px;
-  width: 945px;
-  height: 428px;
-  text-align: left;
-  font: Condensed Black 357px/438px Helvetica Neue;
-  letter-spacing: 0;
-  color: #FFFFFF;
-  opacity: 0.5; }
+header {
+  width: 100vw;
+  height: 35vh;
+  position: relative; }
+  header .header__notas {
+    max-width: 80vw;
+    max-height: 30vh;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 307px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  header .header_crear {
+    position: absolute;
+    left: calc(50% - 94px);
+    top: calc(50% - 60px);
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 82px; }
+
+.cajaGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 1fr;
+  grid-template-areas: "date" "form";
+  max-width: 80vw;
+  margin: 0 auto; }
+  .cajaGrid .main__date {
+    font-size: 82px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    grid-area: date;
+    text-align: center; }
+  .cajaGrid .main__form {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .cajaGrid .main__form .main__form_text {
+      width: 400px;
+      height: 150px; }
 
 body {
-  background-color: #34558B; }
+  background-color: #34558B;
+  width: 100vw;
+  height: 100vh; }
+  body main {
+    width: 100vw;
+    height: 55vh; }

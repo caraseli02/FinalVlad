@@ -8,12 +8,14 @@
 
 <!-- MAIN BLOCK -->
 {% block main %}
+    <section class="cajaGrid">
+        <span class="main__date">5-12-2019</span>
 
-    <span>5-12-2019</span>
-    <h2>TÍTULO</h2>
-    <form action="">
-        <input type="text">
-        <button>Anotar</button>
-    </form>
+        <form class="main__form" action="/" method="POST">
+            <input name="title" type="text" class="main__title" placeholder="TÍTULO">
+            <textarea class="main__form_text" type="text" name="nota"></textarea>
+            <button class="main__form_btn">Anotar</button>
+        </form>
+    </section>
 
 {% endblock %}

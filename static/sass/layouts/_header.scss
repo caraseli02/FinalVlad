@@ -1,11 +1,28 @@
-.header__notas{
-  top: 0px;
-  left: 465px;
-  width: 945px;
-  height: 428px;
-  text-align: left;
-  font: Condensed Black 357px/438px Helvetica Neue;
-  letter-spacing: 0;
-  color: #FFFFFF;
-  opacity: 0.5;
+header{
+  width:100vw;
+  height:35vh;
+  position: relative;
+
+    .header__notas{
+    max-width:80vw;
+    max-height:30vh;
+    margin: 0 auto;
+    text-align: left;
+    font-size:307px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 0.5;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header_crear{
+    position: absolute;
+    left: calc(50% - 94px);
+    top: calc(50% - 60px);
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 82px;
+  }
 }
