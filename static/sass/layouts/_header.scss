@@ -25,4 +25,17 @@ header{
     opacity: 1;
     font-size: 82px;
   }
+  .links{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 300px;
+    z-index: 99;
+
+    .links a {
+      color: #fff;
+      font-size:20px;
+
+    }
+  }
 }

@@ -23,6 +23,22 @@
 		"oAP": "/build/.idea",
 		"oF": 0
 		},
+	"/.vscode/settings.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/.vscode/settings-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/__pycache__/app.cpython-37.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/__pycache__/app.cpython-37.pyc",
+		"oF": 0
+		},
 	"/app.py": {
 		"cB": 0,
 		"ft": 8192,
@@ -3982,6 +3998,14 @@
 		"hM": 0,
 		"oA": 1,
 		"oAP": "/venv/lib/python3.7/site-packages/pip-19.0.3-py3.7.egg/pip/__pycache__/__init__.cpython-37.pyc",
+		"oF": 0
+		},
+	"/venv/lib/python3.7/site-packages/pip-19.0.3-py3.7.egg/pip/__pycache__/__main__.cpython-37.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/venv/lib/python3.7/site-packages/pip-19.0.3-py3.7.egg/pip/__pycache__/__main__.cpython-37.pyc",
 		"oF": 0
 		},
 	"/venv/lib/python3.7/site-packages/pip-19.0.3-py3.7.egg/pip/_internal/__init__.py": {

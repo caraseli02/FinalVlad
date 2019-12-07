@@ -22,6 +22,15 @@ header {
     color: #FFFFFF;
     opacity: 1;
     font-size: 82px; }
+  header .links {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 300px;
+    z-index: 99; }
+    header .links .links a {
+      color: #fff;
+      font-size: 20px; }
 
 .cajaGrid {
   display: grid;
@@ -47,26 +56,31 @@ header {
       width: 400px;
       height: 150px; }
 
-.notas {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "date title" "text text"; }
-  .notas .notas__date, .notas .notas__title {
-    grid-area: date;
-    font-size: 52px;
-    letter-spacing: 0;
-    color: #FFFFFF;
-    opacity: 1;
-    grid-area: date;
-    text-align: center; }
-  .notas .notas__title {
-    grid-area: title; }
-  .notas .notas__texto {
-    grid-area: text;
-    width: 80vw;
-    height: 200px;
-    background-color: #fff; }
+.ver {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding-bottom: 5%; }
+  .ver .notas {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 75px 75px 150px;
+    grid-template-areas: "date date" "title title" "text text"; }
+    .ver .notas .notas__date, .ver .notas .notas__title {
+      grid-area: date;
+      font-size: 52px;
+      letter-spacing: 0;
+      color: #FFFFFF;
+      opacity: 1;
+      grid-area: date;
+      text-align: center; }
+    .ver .notas .notas__title {
+      grid-area: title; }
+    .ver .notas .notas__texto {
+      grid-area: text;
+      background-color: #fff; }
 
 body {
   background-color: #34558B;

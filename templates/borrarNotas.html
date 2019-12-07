@@ -1,8 +1,23 @@
 {% extends 'layout.html' %}
 
 
+{% block header %}
+
+    <span class="header_crear">BORRAR</span>
+
+{% endblock %}
+
 <!-- MAIN BLOCK -->
 {% block main %}
+    <section class="cajaGrid">
+        <span class="main__date">5-12-2019</span>
 
+        <form class="main__form" action="/borrarNotas" method="POST">
+                <input name="title" type="text" class="main__title" placeholder="TÍTULO">
+                <textarea class="main__form_text" type="text" name="nota"></textarea>
+                <button class="main__form_btn">Actualizar</button>
+
+        </form>
+    </section>
 
 {% endblock %}
