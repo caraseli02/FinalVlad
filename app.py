@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
 import datetime
 import random
 #Paquete para Base de datos
@@ -17,26 +18,33 @@ client = MongoClient(MONGO_URL_ATLAS, ssl_cert_reqs=False)
 db = client['Notas']
 collection = db['Notas']
 
+class CREAR_NOTA:
+    def __init__(self, name, note):
+        self.name = name
+        self.note = note
+
 
 #rutas
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global dateInfo
-    d = datetime.date(random.randrange(1900, 2020), random.randrange(1, 13), random.randrange(1, 31))
+    dateInfo = datetime.datetime.now()
+    d = dateInfo.strftime('%x')
     d = str(d)
     if request.method == 'POST':
         title = request.form.get('title')
         nota = request.form.get('nota')
+        tema = request.form.get('tema')
         if title == '' and nota == '':
             return render_template('index.html')
         else:
-            collection.insert_one({'title': title, 'nota': nota, 'date': d})
+            collection.insert_one({'title': title, 'nota': nota, 'date': d , 'tema':tema})
             return render_template('index.html')
     return render_template('index.html',)
 
 @app.route('/verNotas', methods=['GET', 'POST'])
 def ver():
-    datos = collection.find({},{'_id': 0})
+    datos = collection.find({})
     lista = list(datos)
     leng = len(lista)
     nota = list()
@@ -46,31 +54,40 @@ def ver():
         nota.append(lista[i]['nota'])
         title.append(lista[i]['title'])
         date.append(lista[i]['date'])
-    return render_template('verNotas.html', nota=nota, title=title, date=date, list=list, leng=leng)
+    return render_template('verNotas.html', nota=nota, title=title, date=date, lista=lista, leng=leng)
 
     return render_template('verNotas.html')
 
-@app.route('/borrarNotas', methods=['GET', 'POST'])
-def borrarNotas():
-    global dateInfo
-    d = datetime.date(random.randrange(1900, 2020), random.randrange(1, 13), random.randrange(1, 31))
-    d = str(d)
+@app.route('/delete/<path:title>')
+def delete(title):
+    collection.delete_one({'title': title})
+    return redirect('/verNotas')
+
+@app.route('/actualiarNotas/<path:actulize>', methods = ['GET' , 'POST'])
+def actualiarNotas(actulize):
+    note = collection.find({'title': actulize})
+
     if request.method == 'POST':
+        # note.content = request.form['content']
         title = request.form.get('title')
         nota = request.form.get('nota')
-        collection.delete_one( {'title': title, 'nota': nota})
-        return render_template('borrarNotas.html')
-    return render_template('borrarNotas.html',)
 
-@app.route('/actualiarNotas', methods=['GET', 'POST'])
-def actualiarNotas():
-    global dateInfo
-    d = datetime.date(random.randrange(1900, 2020), random.randrange(1, 13), random.randrange(1, 31))
-    d = str(d)
-    title = request.form.get('title')
-    if request.method == 'POST':
-        if title == '':
-            return render_template('index.html')
-    return render_template('actualiarNotas.html',)
+        collection.update_one({'title': actulize}, {
+                '$set' : {'title': title, 'nota':nota}
+            })
+        return redirect('/verNotas')
+
+
+    else:
+        return render_template('actualiarNotas.html', note = list(note))
+
+@app.route('/verTitles')
+def verTitles():
+    
+    return render_template('verTitles.html')
+
+
+
+
 if __name__ == "__main__":
     app.run('127.0.0.1', 5000, debug=True)

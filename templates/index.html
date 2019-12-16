@@ -2,22 +2,47 @@
 <!-- Header BLOCK -->
 {% block header %}
 
-    <span class="header_crear">Crear</span>
-
+<div class="cajaTitulos">
+  <h2 style="margin: 0;" class="header_crear strokeEfect">Crear</h2>
+  <h2 style="margin: 0;" class="header_crear animated">Crear</h2>
+</div>
+     
+{% endblock %}
+{% block links %}
+    <li class="actual"><a href="#">Home</a></li>
+    <li><a href="verNotas">All notes</a></li>
+    <li><a href="verTitles">Select Title</a></li>
+    <li><a href="#">Link Four</a></li>
 {% endblock %}
 
 <!-- MAIN BLOCK -->
 {% block main %}
-    <section class="cajaGrid">
-        <span class="main__date">5-12-2019</span>
-
-        <form class="main__form" action="/" method="POST">
-
-                <input name="title" type="text" class="main__title" placeholder="TÍTULO">
-                <textarea class="main__form_text" type="text" name="nota"></textarea>
-                <button class="main__form_btn">Anotar</button>
-
-        </form>
-    </section>
+<section class="cajaGrid">
+  <form class="main__form" action="/" method="POST">
+    <input
+      name="title"
+      type="text"
+      class="main__title"
+      placeholder="Note Title"
+    /><select>
+      <option>Notas</option>
+      <option>Notas2</option>
+    </select>
+    <label class="main__form__label" for="tema"
+      >&#9998;<input
+        name="tema"
+        type="text"
+        class="main__form__label__input"
+        placeholder="Label"
+    /></label>
+    <textarea
+      class="main__form_text"
+      type="text"
+      name="nota"
+      placeholder="Start writing..."
+    ></textarea>
+    <button class="main__form_btn">&#10003;</button>
+  </form>
+</section>
 
 {% endblock %}

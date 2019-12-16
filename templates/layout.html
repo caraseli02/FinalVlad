@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Notas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css')}}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/reset.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/main.css')}}"
+    />
   </head>
   <body>
-      <!-- Header-->
-      <header>
-        <div class="links">
-          <a href="/">Index</a>
-          <a href="verNotas">Ver Notas</a>
-          <a href="actualiarNotas">Actualizar</a>
-          <a href="borrarNotas">Borrar</a>
-        </div>
+    <!-- Header-->
+    <header>
+      <nav class="links">
+        <input type="checkbox" id="checkbox_toggle" />
+        <label class="label__check" for="checkbox_toggle"><!-- &#61;--></label> 
+        <ul class="links__container">
+          <br>
+          {% block links %}{% endblock %}
+          <br>
+        </ul>
+      </nav>
       <h2 class="header__notas">NOTAS</h2>
-       {% block header %}{% endblock %} 
-      </header>
-      
+      {% block header %}{% endblock %}
+    </header>
 
-      <!-- MAIN BLOCK -->
-      <main>
+    <!-- MAIN BLOCK -->
+    <main>
       {% block main %}{% endblock %}
-      </main>
+    </main>
   </body>
 </html>

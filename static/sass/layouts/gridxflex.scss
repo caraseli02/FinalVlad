@@ -1,67 +1,83 @@
 .cajaGrid{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px 1fr;
-    grid-template-areas: "date" "form";
+    // display:grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 150px 1fr;
+    // grid-template-areas: "date" "form";
     max-width: 80vw;
     margin: 0 auto;
-    .main__date{
-        font-size: 82px;
-        letter-spacing: 0;
-        color: #FFFFFF;
-        opacity: 1;
-        grid-area: date;
-        text-align:center;
-    }
+    // .main__date{
+    //     font-size: 82px;
+    //     letter-spacing: 0;
+    //     color: #FFFFFF;
+    //     opacity: 1;
+    //     grid-area: date;
+    //     text-align:center;
+    // }
 
-    .main__title{
+    // .main__title{
         
-    }
+    // }
 
     .main__form{
-        grid-area: form;
+        // grid-area: form;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        background-color: #34558b;
 
+        
+        .main__form_text, .main__form_btn , .main__title , .main__form_date{
+            color: #99aac5;
+            background-color: #34558b;
+            border: none;
+            width: 80vw;
+            margin: 0 auto;
+        }
         .main__form_text{
-            width: 400px;
             height: 150px;
+            margin: 0 auto;
+            font-size: 2rem;
         }
+        .main__form_btn{
+            font-size: 2.5rem;
+            width: 100px;
+            height: 50px;
+            background-color: #0b2040;
+            color:#D9B266;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 0;
+
+            &:hover{
+                color: #0b2040;
+                background-color:#D9B266;
+            }
+        }
+        
+        .main__title{
+            font-size: 3rem;
+        }
+        
+        .main__form__label{
+            font-size: 2rem;
+            width: 100%;
+            display: inline-block;
+            color: #99aac5;
+            background-color: #34558b;
+            border: none;
+            margin: 5px auto;
+            border-bottom: 0.5px solid #99aac5;
+            .main__form__label__input{
+                @extend .main__form__label;
+                border: none;
+                width: 80%;
+                margin-left: 10px;
+            }
+        }
+
+        
+        
     }
 }
-.ver{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 80vw;
-    padding-bottom: 5%;
-        .notas{
-        display: grid;
-            grid-template-columns: 150px 150px;
-            grid-template-rows: 75px 75px 150px;
-            grid-template-areas: "date date" "title title" "text text";
 
-        .notas__date{
-            grid-area: date;
-            font-size: 52px;
-            letter-spacing: 0;
-            color: #FFFFFF;
-            opacity: 1;
-            grid-area: date;
-            text-align:center;
-        }
-
-        .notas__title{
-            @extend .notas__date ;
-            grid-area: title;
-        }
-
-        .notas__texto{
-            grid-area: text;
-            background-color: #fff;
-        }
-    }
-}

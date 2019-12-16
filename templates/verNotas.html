@@ -1,24 +1,45 @@
-{% extends 'layout.html' %}
-
-
+{% extends 'layout.html' %} 
 {% block header %}
 
-    <span class="header_crear">Ver</span>
+<div class="cajaTitulos">
+  <h2 style="margin: 0;" class="header_crear strokeEfect">Ver Notas</h2>
+  <h2  style="margin: 0;" class="header_crear animated">Ver Notas</h2>
+</div>
 
+{% endblock %}
+
+{% block links %}
+    <li><a href="/">Home</a></li>
+    <li class="actual"><a href="#">All notes</a></li>
+    <li><a href="verTitles">Select Title</a></li>
+    <li><a href="#">Link Four</a></li>
 {% endblock %}
 
 <!-- MAIN BLOCK -->
 {% block main %}
-    <section class="ver">
-    {% for i in range(0, leng) %}
-        <div class="notas">
-            <span class="notas__date">{{ date[i] }}</span>
-            <span class="notas__title">{{ title[i] }}</span>
-            <p class="notas__texto">{{ nota[i] }}</p>
-        </div>
-    {% endfor %}
+<section class="container">
+  {% for i in range(1, leng) %}
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="/static/img/notepad.svg" />
+        <h3>{{title[i]}}</h3>
+        <span>{{date[i]}}</span>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p class="content__links">{{nota[i]}}</p>
+        <a href="/actualiarNotas/{{ lista[i]["title"] }}">Actualizar</a>
+        <a href="/delete/{{  lista[i]["title"] }}">Borrar</a>
+      </div>
 
-{{ list }}
-    </section>
+
+    </div>
+  </div>
+  {% endfor %}
+{#{{lista}} {{lista[0]['_id']}}#}
+{{lista}}
+</section>
 
 {% endblock %}
