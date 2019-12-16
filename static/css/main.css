@@ -1,23 +1,33 @@
 header {
-  width: 100vw;
-  height: 400px; }
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 auto; }
+  header .header__notas {
+    font-size: 85px;
+    font-family: Impact;
+    color: #0A568C;
+    height: 100px;
+    line-height: 1.25; }
   header .cajaTitulos {
-    width: 100%;
-    height: 150px;
-    margin: 0 auto;
+    width: 115px;
+    height: 100px;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center; }
+    justify-content: flex-start;
+    align-items: flex-end; }
     header .cajaTitulos .header_crear {
       position: absolute;
       color: #fff;
-      font-size: 6rem; }
+      font-size: 45px;
+      line-height: 1.5; }
     header .cajaTitulos .strokeEfect {
       color: transparent;
-      -webkit-text-stroke: 2px #0b2040; }
+      -webkit-text-stroke: 2px #798995; }
     header .cajaTitulos .animated {
-      color: #0b2040;
+      color: #798995;
       animation: waterEfect 6s ease-in-out infinite;
       margin: 0; }
 
@@ -28,67 +38,6 @@ header {
     clip-path: polygon(0 60%, 16% 65%, 33% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0 100%); }
   100% {
     clip-path: polygon(0 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0 100%); } }
-  header .links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 99;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    flex-direction: column; }
-    header .links input[type="checkbox"] {
-      display: none; }
-    header .links .links__container {
-      display: none;
-      transition: right 0.6s ease-in-out; }
-    header .links .label__check {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: lighter;
-      cursor: pointer;
-      text-align: right;
-      margin: 15px;
-      z-index: 2; }
-      header .links .label__check::before {
-        content: " = "; }
-    header .links input[type="checkbox"]:checked ~ .links__container {
-      width: 15vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      width: 22vw;
-      background-color: #c4dbff;
-      transform: skew(-12deg, 0deg);
-      transition: right 0.6s cubic-bezier(0.43, -0.62, 0.38, 0.22);
-      position: fixed;
-      top: 0;
-      right: 0;
-      margin: 0;
-      padding: 0;
-      z-index: 1;
-      font-size: 20px; }
-      header .links input[type="checkbox"]:checked ~ .links__container li {
-        width: 50%;
-        cursor: pointer;
-        font-size: 18px;
-        font-size: 2.7vh;
-        text-align: left;
-        margin-bottom: 5%; }
-        header .links input[type="checkbox"]:checked ~ .links__container li a {
-          font-size: 22px;
-          font-weight: bold;
-          color: #0b2040;
-          text-decoration: none; }
-      header .links input[type="checkbox"]:checked ~ .links__container .actual {
-        position: relative; }
-        header .links input[type="checkbox"]:checked ~ .links__container .actual a {
-          z-index: 2;
-          color: #d9b266; }
-    header .links input[type="checkbox"]:checked ~ .label__check::before {
-      content: " x "; }
 
 .cajaGrid {
   max-width: 80vw;
@@ -98,29 +47,32 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #34558b; }
-    .cajaGrid .main__form .main__form_text, .cajaGrid .main__form .main__form_btn, .cajaGrid .main__form .main__title, .cajaGrid .main__form .main__form_date {
-      color: #99aac5;
-      background-color: #34558b;
-      border: none;
-      width: 80vw;
-      margin: 0 auto; }
+    position: relative; }
     .cajaGrid .main__form .main__form_text {
-      height: 150px;
+      height: 70vh;
       margin: 0 auto;
-      font-size: 2rem; }
-    .cajaGrid .main__form .main__form_btn {
-      font-size: 2.5rem;
-      width: 100px;
-      height: 50px;
-      background-color: #0b2040;
-      color: #D9B266;
-      border-radius: 15px;
-      cursor: pointer;
-      margin: 0; }
-      .cajaGrid .main__form .main__form_btn:hover {
-        color: #0b2040;
-        background-color: #D9B266; }
+      font-size: 1.5rem;
+      margin: 0;
+      border: none;
+      background-image: url(../img/fondo_cuaderno.png);
+      background-repeat: no-repeat; }
+    .cajaGrid .main__form .caja__btns {
+      display: block;
+      width: 100vw;
+      height: 100px;
+      background-color: #0F4C81;
+      border: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .cajaGrid .main__form .caja__btns .main__form_btn {
+        border: none;
+        cursor: pointer; }
+        .cajaGrid .main__form .caja__btns .main__form_btn img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border: none; }
     .cajaGrid .main__form .main__title {
       font-size: 3rem; }
     .cajaGrid .main__form .main__form__label, .cajaGrid .main__form .main__form__label .main__form__label__input {
@@ -207,7 +159,8 @@ header {
       transform: translateY(0); }
 
 body {
-  background-color: #34558B;
-  width: 100vw; }
+  background-color: #F8F8F8;
+  width: 100vw;
+  font-family: Impact; }
   body main {
     width: 100vw; }

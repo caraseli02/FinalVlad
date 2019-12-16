@@ -32,13 +32,11 @@ def index():
     d = dateInfo.strftime('%x')
     d = str(d)
     if request.method == 'POST':
-        title = request.form.get('title')
         nota = request.form.get('nota')
-        tema = request.form.get('tema')
-        if title == '' and nota == '':
+        if nota == '':
             return render_template('index.html')
         else:
-            collection.insert_one({'title': title, 'nota': nota, 'date': d , 'tema':tema})
+            collection.insert_one({ 'nota': nota, 'date': d, 'Title': 'Movil' })
             return render_template('index.html')
     return render_template('index.html',)
 
