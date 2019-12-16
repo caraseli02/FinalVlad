@@ -16,7 +16,7 @@ MONGO_URL_ATLAS = 'mongodb+srv://admin:root@cluster0-odxe4.mongodb.net/test?retr
 
 client = MongoClient(MONGO_URL_ATLAS, ssl_cert_reqs=False)
 db = client['Notas']
-collection = db['Notas']
+collection = db['NotasMovil']
 
 class CREAR_NOTA:
     def __init__(self, name, note):
@@ -49,16 +49,16 @@ def ver():
     title = list()
     date = list()
     for i in range(0, leng):
+        title.append(lista[i]['Title'])
         nota.append(lista[i]['nota'])
-        title.append(lista[i]['title'])
         date.append(lista[i]['date'])
-    return render_template('verNotas.html', nota=nota, title=title, date=date, lista=lista, leng=leng)
+    return render_template('verNotas.html', nota=nota, date=date, lista=lista, leng=leng,title=title)
 
     return render_template('verNotas.html')
 
-@app.route('/delete/<path:title>')
-def delete(title):
-    collection.delete_one({'title': title})
+@app.route('/delete/<path:nota>')
+def delete(nota):
+    collection.delete_one({'nota': nota})
     return redirect('/verNotas')
 
 @app.route('/actualiarNotas/<path:actulize>', methods = ['GET' , 'POST'])

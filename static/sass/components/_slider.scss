@@ -8,97 +8,76 @@ $black_80: rgba(0, 0, 0, 0.8);
 $font_0: consolas;
 
 .container {
-	display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
     width: 80vw;
     padding-bottom: 5%;
     margin: 0 auto;
 	.card {
+		display: flex;
+    	justify-content: space-around;
+    	align-items: flex-end;
+		flex-direction:column;
 		position: relative;
 		cursor: pointer;
+		width:100vw;
+		margin-bottom: 5%;
 		.face {
-			width: 300px;
-			height: 200px;
+			width:100vw;
+			margin-left: 5%;
 			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 			transition: 0.5s;
-			&.face1 {
-				position: relative;
-				background: $color_mine_shaft_approx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				z-index: 1;
-				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-				transform: translateY(100px);
-				.content {
-					opacity: 0.2;
-					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-					transition: 0.5s;
-					img {
-						max-width: 100px;
-					}
-					h3 {
-						margin: 10px 0 0;
-						padding: 0;
-						color: $white;
-						text-align: center;
-						font-size: 1.5em;
-					}
-				}
+			background-color:#0a568c;
+			border-radius: 25px 0 0 25px;
+			padding-left: 5%;
 			}
 			&.face2 {
 				position: relative;
-				background: $white;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				padding: 20px;
-				//Instead of the line below you could use @include box-sizing($bs)
-				box-sizing: border-box;
-				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-				box-shadow: 0 20px 50px $black_80;
-				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-				transform: translateY(-100px);
-				.content {
-					p {
-						margin: 0;
-                        padding: 0;
-                        overflow: scroll;
-                        width: 200px;
-                        height: 150px;
-                    }
-                    
+
+				}
+			.content {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color:#0a568c;
+				border-radius:0 0 0 15px;
+				width:150px;
+				margin-right:1.5rem;
 					a {
-						margin: 5px 0 0;
 						display: inline-block;
 						text-decoration: none;
 						font-weight: 900;
 						color: $color_mine_shaft_approx;
-						padding: 5px;
-						border: 1px solid $color_mine_shaft_approx;
+						padding: 5%;
 						&:hover {
 							background: $color_mine_shaft_approx;
 							color: $white;
 						}
 					}
-				}
 			}
 		}
-		&:hover .face {
-			&.face1 {
-				background: $color_razzmatazz_approx;
-				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-				transform: translateY(0);
-				.content {
-					opacity: 1;
-				}
-			}
-			&.face2 {
-				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-				transform: translateY(0);
-			}
-		}
-	}
 }
+.caja__btns{
+            display: block;
+            width:100vw;
+            height: 100px;
+            background-color: #0F4C81;
+            border: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .main__form_btn{
+                border: none;
+                cursor: pointer;
+                img{
+                   display: block;
+                    width:100%;
+                    height:100%;
+                    border: none;
+                }
+
+            }
+        }

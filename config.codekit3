@@ -85,6 +85,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/static/img/change.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/static/img/change.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/static/img/del.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/static/img/del.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/static/img/fondo_cuaderno.png": {
 		"ft": 32768,
 		"iS": 188,

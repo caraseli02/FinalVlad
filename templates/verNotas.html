@@ -1,45 +1,38 @@
-{% extends 'layout.html' %} 
+{% extends 'layout.html' %}
+<!-- Header BLOCK -->
 {% block header %}
 
 <div class="cajaTitulos">
-  <h2 style="margin: 0;" class="header_crear strokeEfect">Ver Notas</h2>
-  <h2  style="margin: 0;" class="header_crear animated">Ver Notas</h2>
+  <h2 style="margin: 0;" class="header_crear strokeEfect">Ver</h2>
+  <h2 style="margin: 0;" class="header_crear animated">Ver</h2>
 </div>
 
 {% endblock %}
-
-{% block links %}
-    <li><a href="/">Home</a></li>
-    <li class="actual"><a href="#">All notes</a></li>
-    <li><a href="verTitles">Select Title</a></li>
-    <li><a href="#">Link Four</a></li>
-{% endblock %}
-
 <!-- MAIN BLOCK -->
 {% block main %}
 <section class="container">
-  {% for i in range(1, leng) %}
+  {% for i in range(0, leng) %}
   <div class="card">
-    <div class="face face1">
+        <div class="face face2">
+            <p class="content__links">{{title[i]}}</p>
+            <p class="content__links">{{date[i]}}</p>
+            <p class="content__links">{{nota[i]}}</p>
+        </div>
       <div class="content">
-        <img src="/static/img/notepad.svg" />
-        <h3>{{title[i]}}</h3>
-        <span>{{date[i]}}</span>
-      </div>
-    </div>
-    <div class="face face2">
-      <div class="content">
-        <p class="content__links">{{nota[i]}}</p>
-        <a href="/actualiarNotas/{{ lista[i]["title"] }}">Actualizar</a>
-        <a href="/delete/{{  lista[i]["title"] }}">Borrar</a>
-      </div>
 
-
-    </div>
+        <a href="/actualiarNotas/{{ lista[i]["nota"] }}"><img src="../static/img/change.svg" alt=""></a>
+        <a href="/delete/{{  lista[i]["nota"] }}"><img src="../static/img/del.svg" alt=""></a>
+      </div>
   </div>
   {% endfor %}
-{#{{lista}} {{lista[0]['_id']}}#}
-{{lista}}
+
 </section>
+    <div class="caja__btns">
+        <br>
+        <button class="main__form_btn"><img src="../static/img/Save.svg" alt=""></button>
+        <a href="/verNotas" class="main__form_btn"><img src="../static/img/NoteList.svg" alt=""></a>
+        <br>
+    </div>
 
 {% endblock %}
+
