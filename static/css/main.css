@@ -1,18 +1,6 @@
 header {
   width: 100vw;
   height: 400px; }
-  header .header__notas {
-    max-width: 80vw;
-    max-height: 30vh;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 307px;
-    letter-spacing: 0;
-    color: #ffffff;
-    opacity: 0.5;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
   header .cajaTitulos {
     width: 100%;
     height: 150px;
