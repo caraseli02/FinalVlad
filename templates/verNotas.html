@@ -27,12 +27,17 @@
   {% endfor %}
 
 </section>
-    <div class="caja__btns">
-        <br>
-        <button class="main__form_btn"><img src="../static/img/Save.svg" alt=""></button>
-        <a href="/verNotas" class="main__form_btn"><img src="../static/img/NoteList.svg" alt=""></a>
-        <br>
-    </div>
+
 
 {% endblock %}
+
+{% block footer %}
+    <footer class="caja__foo">
+            <br>
+            <a href="/" class="main__form_btn"><img src="../static/img/Save.svg" alt=""></a>
+            <a href="/verNotas" class="main__form_btn"><img src="../static/img/NoteList.svg" alt=""></a>
+            <br>
+    </footer>
+{% endblock %}
+
 
