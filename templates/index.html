@@ -16,12 +16,17 @@
 {% block main %}
 <section class="cajaGrid">
   <form class="main__form" action="/" method="POST">
-    <textarea
-      class="main__form_text"
-      type="text"
-      name="nota"
-      placeholder="Start writing..."
-    ></textarea>
+      <input
+              class="main__form_title"
+              type="input"
+              name="title"
+              placeholder="Title.."
+      ><textarea
+          class="main__form_text"
+          type="text"
+          name="nota"
+          placeholder="Start writing..."
+  ></textarea>
       <div class="caja__btns">
           <br>
           <button class="main__form_btn"><img src="../static/img/Save.svg" alt=""></button>

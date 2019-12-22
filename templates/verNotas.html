@@ -11,6 +11,18 @@
 <!-- MAIN BLOCK -->
 {% block main %}
 <section class="container">
+    <form class="form__Search" method="post" action="/verNotas">
+        <div class="caja__titles">
+            {% for i in range(0, leng) %}
+            <a href="/verNotas/{{ title[i] }}" type="checkbox" class="form__titles">{{title[i]}}</a>
+            {% endfor %}
+        </div>
+        <div class="caja__search">
+            <input type="text" name="search" placeholder="Search">
+            <button>&#10150;</button>
+        </div>
+
+    </form>
   {% for i in range(0, leng) %}
   <div class="card">
         <div class="face face2">
@@ -25,9 +37,8 @@
       </div>
   </div>
   {% endfor %}
-
+{{ titles }}
 </section>
-
 
 {% endblock %}
 
@@ -39,5 +50,14 @@
             <br>
     </footer>
 {% endblock %}
+{% block script %}
 
+    titles = document.querySelectorAll('.form__titles')
+    titles.forEach(title => {
+    title.addEventListener('click', () => {
+        title.classList.toggle('colorChange')
+        })
+    })
+
+{% endblock %}
 

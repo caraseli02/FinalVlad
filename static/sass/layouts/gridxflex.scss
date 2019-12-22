@@ -28,13 +28,20 @@
 
 
         .main__form_text{
-            height: 70vh;
+            height: 60vh;
             margin: 0 auto;
             font-size: 1.5rem;
             margin: 0;
             border:none;
             background-image: url(../img/fondo_cuaderno.png);
             background-repeat:no-repeat;
+        }
+        .main__form_title{
+            height: 10vh;
+            margin: 0 auto;
+            border:none;
+            text-align: center;
+            font-size: 2rem;
         }
         .caja__btns{
             display: block;

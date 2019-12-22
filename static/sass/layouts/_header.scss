@@ -1,10 +1,10 @@
 header {
-  width: 100%;
+  width: 100vw;
   height: 150px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items:flex-start;
-  padding: 0 auto;
+  padding: 0 0 0 45px;
 
   .header__notas {
     font-size: 85px;

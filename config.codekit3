@@ -146,6 +146,17 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/static/js/js.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/static/js/js-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/static/sass/bases/_reset.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -392,6 +403,14 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"/templates/actualiarNotas.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/actualiarNotas.html",
+		"oF": 0
 		},
 	"/templates/borrarNotas.html": {
 		"cB": 0,

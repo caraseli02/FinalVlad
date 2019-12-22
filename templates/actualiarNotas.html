@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+<!-- Header BLOCK -->
+{% block header %}
+
+<div class="cajaTitulos">
+  <h2 style="margin: 0;" class="header_crear strokeEfect">ACTUALIZAR</h2>
+  <h2 style="margin: 0;" class="header_crear animated">ACTUALIZAR</h2>
+</div>
+
+{% endblock %}
+{% block links %}
+
+{% endblock %}
+
+<!-- MAIN BLOCK -->
+{% block main %}
+<section class="cajaGrid">
+{#    {% for key, value in note.items() %}#}
+  <form class="main__form" action="/actualiarNotas/{{ note[0]['nota'] }}" method="POST">
+    <input
+      class="main__form_title"
+      type="input"
+      name="title"
+      placeholder="{{note[0]['title']}}"
+    >
+      <textarea
+      class="main__form_text"
+      type="text"
+      name="nota"
+      placeholder="Start writing..."
+    >{{note[0]['nota']}}</textarea>
+      <div class="caja__btns">
+          <br>
+          <button class="main__form_btn"><img src="../static/img/Save.svg" alt=""></button>
+          <a href="/verNotas" class="main__form_btn"><img src="../static/img/NoteList.svg" alt=""></a>
+          <br>
+      </div>
+
+  </form>
+{#{% endfor %}#}
+</section>
+{% endblock %}

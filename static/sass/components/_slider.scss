@@ -8,73 +8,168 @@ $black_80: rgba(0, 0, 0, 0.8);
 $font_0: consolas;
 
 .container {
-    width: 100vw;
-    padding-bottom: 5%;
+  width: 100vw;
+  padding-bottom: 5%;
+  margin: 0 auto;
+
+  .form__Search {
+    width: 80vw;
     margin: 0 auto;
-	.card {
-		box-sizing: border-box;
-		display: flex;
-    	justify-content: space-around;
-    	align-items: flex-end;
-		flex-direction:column;
-		position: relative;
-		cursor: pointer;
-		margin-bottom: 5%;
-		.face {
-			width:95vw;
-			margin-left: 5vw;
-			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-			transition: 0.5s;
-			background-color:#0a568c;
-			border-radius: 25px 0 0 25px;
-			padding-left: 5%;
-			}
-			&.face2 {
-				position: relative;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 20px;
-				}
-			.content {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color:#0a568c;
-				border-radius:0 0 0 15px;
-				width:150px;
-					a {
-						display: inline-block;
-						text-decoration: none;
-						font-weight: 900;
-						color: $color_mine_shaft_approx;
-						padding: 5%;
-						&:hover {
-							background: $color_mine_shaft_approx;
-							color: $white;
-						}
-					}
-			}
-		}
-}
-.caja__btns{
-            display: block;
-            height: 100px;
-            background-color: #0F4C81;
-            border: none;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
 
-            .main__form_btn{
-                border: none;
-                cursor: pointer;
-                img{
-                   display: block;
-                    width:100%;
-                    height:100%;
-                    border: none;
-                }
+    .caja__search {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5% 0;
 
-            }
+      input {
+        border: none;
+        width: 50vw;
+        border: 1px solid #0a568c;
+        border-radius: 15px;
+        padding: 5px;
+        transform: translate(35px);
+
+      }
+
+      button {
+        border: none;
+        font-size: 2rem;
+        color: #0a568c;
+        transform: translate(-5px);
+        z-index: 9;
+        width: 50px;
+      }
+    }
+
+    .caja__titles {
+      width: 80vw;;
+      height: 60px;
+      overflow-y: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: -moz-scrollbars-none;
+
+      .form__titles {
+        display: inline-block;
+        color: #0a568c;
+        padding: 5px 10px;
+        border: 1px solid #0a568c;
+        border-radius: 15px;
+        margin-left: 5px;
+
+        .form__titles__check {
+
         }
+
+      }
+
+      .colorChange {
+        background-color: #798995;
+      }
+    }
+
+    .caja__titles::-webkit-scrollbar {
+      width: 1px; /* Tamaño del scroll en vertical */
+      height: 1px; /* Tamaño del scroll en horizontal */
+      display: none; /* Ocultar scroll */
+    }
+
+    //.caja__titles::-webkit-scrollbar-thumb {
+    //	background: #ccc;
+    //	border-radius: 4px;
+    //}
+    //.caja__titles::-webkit-scrollbar-thumb:hover {
+    //	background: #b3b3b3;
+    //	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    //}
+    //Checkbox button
+
+
+  }
+
+  .card {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 5%;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .face {
+      width: 95vw;
+      margin-left: 5vw;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: 0.5s;
+      background-color: #0a568c;
+      border-radius: 25px 0 0 25px;
+      padding-left: 5%;
+    }
+
+    &.face2 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a568c;
+      border-radius: 0 0 0 15px;
+      width: 150px;
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: $color_mine_shaft_approx;
+        padding: 5%;
+
+        &:hover {
+          background: $color_mine_shaft_approx;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.caja__btns {
+  display: block;
+  height: 100px;
+  background-color: #0F4C81;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .main__form_btn {
+    border: none;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+  }
+}

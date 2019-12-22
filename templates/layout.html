@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Notas</title>
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </div>
+          {% endif %}
+      {% endwith %}
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename = 'css/reset.css')}}"
@@ -30,4 +39,11 @@
         {% block footer %}{% endblock %}
     </footer>
   </body>
+  <script>
+      msg = document.querySelector('.flashes')
+      setTimeout(() => {
+          msg.style.display = 'none'
+      }, 2000)
+      {% block script %}{% endblock %}
+  </script>
 </html>
