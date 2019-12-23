@@ -13,8 +13,9 @@
 <section class="container">
     <form class="form__Search" method="post" action="/verNotas">
         <div class="caja__titles">
-            {% for i in range(0, leng) %}
-            <a href="/verNotas/{{ title[i] }}" type="checkbox" class="form__titles">{{title[i]}}</a>
+            <a href="/verNotas" class="form__titles colorChange">all</a>
+            {% for title in title_links %}
+            <a href="/verNotas/{{ title }}" type="checkbox" class="form__titles {{ title }}">{{title}}</a>
             {% endfor %}
         </div>
         <div class="caja__search">
@@ -37,7 +38,7 @@
       </div>
   </div>
   {% endfor %}
-{{ titles }}
+{{ title_link }}
 </section>
 
 {% endblock %}
@@ -52,12 +53,14 @@
 {% endblock %}
 {% block script %}
 
-    titles = document.querySelectorAll('.form__titles')
-    titles.forEach(title => {
-    title.addEventListener('click', () => {
-        title.classList.toggle('colorChange')
-        })
-    })
+titles = document.querySelectorAll('.form__titles')
+i = 0
+
+title = document.querySelector('.{{ title_link }}')
+    title.style.backgroundColor = "grey";
+
+titleAll = document.querySelector('.colorChange')
+    titleAll.style.backgroundColor = "white";
 
 {% endblock %}
 

@@ -48,9 +48,6 @@ def index():
 @app.route('/verNotas', methods=['GET', 'POST'])
 def ver():
     if request.method == 'POST':
-        check = request.form.get('Proba2')
-        if check is not None:
-            flash('Funcciona')
         src = request.form.get('search')
         datos = collection.find({
             "nota": {"$regex": src, '$options': 'si'},
@@ -60,29 +57,33 @@ def ver():
         leng = len(lista)
         nota = list()
         title = list()
+        title_links = set()
         date = list()
         try:
             for i in range(0, leng):
                 title.append(lista[i]['title'])
+                title_links.add(lista[i]['title'])
                 nota.append(lista[i]['nota'])
                 date.append(lista[i]['date'])
             return render_template('verNotas.html', nota=nota,
-                                   date=date, lista=lista, leng=leng, title=title, check=check)
+                                   date=date, lista=lista, leng=leng, title=title, title_links=title_links)
         except ValueError:
             return 'ErrorResponse'
     datos = collection.find({})
     lista = list(datos)
     leng = len(lista)
     nota = list()
-    title = collection.find({},{"title":1, "_id": 0, "date": 0})
+    title = list()
+    title_links = set()
     date = list()
     try:
         for i in range(0, leng):
             title.append(lista[i]['title'])
+            title_links.add(lista[i]['title'])
             nota.append(lista[i]['nota'])
             date.append(lista[i]['date'])
         return render_template('verNotas.html', nota=nota,
-                               date=date, lista=lista, leng=leng, title=title)
+                               date=date, lista=lista, leng=leng, title=title, title_links=title_links)
     except ValueError:
         return 'ErrorResponse'
     return render_template('verNotas.html')
@@ -123,22 +124,24 @@ def selectTitle(title_link):
     Tlink = collection.find({
         "title": {"$regex": title_link, '$options': 'si'}
     })
-    datosTitle = collection.find({})
-    titles = collection.find({},{"title":1, "_id": 0, "date": 0})
-    titles = list(titles)
+    titlesDB = list(collection.find({}, {"title": 1, "_id": 0}))
     lista = list(Tlink)
     leng = len(lista)
-    lengTitles = len(titles)
     nota = list()
     title = list()
+    title_links = set()
+    for t in titlesDB:
+        title_links.add(t["title"])
     date = list()
     try:
         for i in range(0, leng):
-            title.append(titles[i]['title'])
+            title.append(lista[i]['title'])
+            # title_links.add(titlesDB[i]['title'])
             nota.append(lista[i]['nota'])
             date.append(lista[i]['date'])
         return render_template('verNotas.html', nota=nota,
-                               date=date, lista=lista, leng=leng, title=title, titles=titles)
+                               date=date, lista=lista, leng=leng, title=title, title_links=title_links,
+                               titlesDB=titlesDB, title_link=title_link)
     except ValueError:
         return 'ErrorResponse'
 
